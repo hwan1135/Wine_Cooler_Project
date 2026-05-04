@@ -13,7 +13,12 @@ class GeminiService {
   Future<Wine?> processWineInput(String input) async {
     final prompt = '''
     Analyze this wine input: "$input". 
-    Provide the details in a valid JSON format with keys: "title", "vintage", "country", and "price". 
+    Provide the details in a valid JSON format with keys: 
+    "title" (string), 
+    "vintage" (string), 
+    "country" (string), 
+    "price" (number),
+    "drinkingWindow" (string, e.g., "2025-2032" or "Now").
     If a value is unknown, use "N/A" for strings and 0.0 for numbers.
     Return ONLY the JSON object.
     ''';
